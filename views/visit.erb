@@ -1,15 +1,26 @@
 <h2>Записаться</h2>
 <p>На этой странице вы сможете записаться к нам в Barber Shop</p>
 
+
+<script type="text/javascript">
+
+$(function() {
+
+  // тут я могу написать любой javascript код, который исполнится
+  // после загрузки страницы
+
+  $('#color').simplecolorpicker();
+
+});
+
+</script>
+
+
 <form action="/visit" method="POST" role="form">
-
-  
-
-  
 
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="user_name" type="text" class="form-control" placeholder="Ваше имя" value="<%= @user_name %>">
+    <input name="username" type="text" class="form-control" placeholder="Ваше имя" value="<%= @username %>">
   </div>
 
   <div class="form-group">
@@ -19,10 +30,11 @@
 
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input name="date_time" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @date_time %>">
+    <input name="datetime" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @datetime %>">
   </div>
 
-   <div class="form-group">
+
+  <div class="form-group">
     <label>Ваш парикмахер:</label>
     <select name="barber" class="form-control">
       <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
@@ -52,9 +64,3 @@
   <button type="submit" class="btn btn-primary">Записаться</button>
 
 </form>
-
-<script type="text/javascript">
-
-$('#color').simplecolorpicker();
-
-</script>
